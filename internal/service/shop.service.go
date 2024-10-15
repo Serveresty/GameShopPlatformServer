@@ -9,3 +9,7 @@ type ShopService struct {
 func NewShopService(repo *repository.ShopRepository) *ShopService {
 	return &ShopService{shopRepo: repo}
 }
+
+func (ss *ShopService) GetShopRepository() *repository.ShopRepository {
+	return ss.shopRepo
+}

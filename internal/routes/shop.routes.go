@@ -15,5 +15,9 @@ func NewShopRouteController(cont *controllers.ShopController) *ShopRouteControll
 }
 
 func (rc *ShopRouteController) ShopRoutes(router *gin.Engine) {
-
+	auth := router.Group("auth")
+	{
+		auth.POST("/sign-in", rc.shopCont.SignIn)
+		auth.POST("/sign-up", rc.shopCont.SignUp)
+	}
 }
